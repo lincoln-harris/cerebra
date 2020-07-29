@@ -1,4 +1,8 @@
 language: python
+
+services:
+  - docker
+
 matrix:
   include:
 
@@ -22,6 +26,14 @@ matrix:
         - pip3 install -r requirements.txt 
         - pip3 install -r test_requirements.txt
         - pip3 install .
+
+    - os: linux
+      python: "3.7"
+      before_install:
+        - docker pull lincolnharris/cerebra
+        - docker run -it lincolnharris/cerebra
+        - cd cerebra
+
 
     # - os: linux
     #   python: "3.8-dev"
