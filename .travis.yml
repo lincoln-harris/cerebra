@@ -29,7 +29,7 @@ matrix:
 
     - os: linux
       python: "3.7"
-      before_install:
+      install:
         - docker pull lincolnharris/cerebra
         - docker run -it lincolnharris/cerebra
         - cd cerebra
@@ -145,11 +145,11 @@ matrix:
   #   - python: "pypy3"
   #   - os: windows
 
-script:
-    - make test
-    - make coverage
-    - make lint
+# script:
+#     - make test
+#     - make coverage
+#     - make lint
 
-after_script:
-    - pip3 install codecov
-    - codecov
+# after_script:
+#     - pip3 install codecov
+#     - codecov
