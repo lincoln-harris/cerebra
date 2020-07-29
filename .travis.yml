@@ -33,6 +33,10 @@ matrix:
         - docker pull lincolnharris/cerebra
         - docker run -it lincolnharris/cerebra
         - cd cerebra
+      script:
+        - make test
+        - make coverage
+        - make lint
 
 
     # - os: linux
